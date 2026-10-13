@@ -1,6 +1,6 @@
 # iAducació · GitHub Pages
 
-Còpia independent preparada el 13/10/2026. Encara no publicada.
+Còpia independent preparada el 13/10/2026. Repositori: aasensi8/iAducacio. URL de GitHub Pages: https://aasensi8.github.io/iAducacio/
 
 ## Publicació
 Puja el contingut d’aquesta carpeta al repositori que vulguis utilitzar. A Settings → Pages, selecciona Deploy from a branch, la branca que conté els fitxers i la carpeta /docs. La URL concreta dependrà del compte i del nom del repositori. Els enllaços són relatius i funcionen en una ruta de projecte.
