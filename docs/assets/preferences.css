@@ -1,0 +1,33 @@
+/* Shared preferences: explicit light default, persistent dark alternative. */
+.site-controls{display:flex;align-items:center;gap:12px;font:14px Arial,sans-serif}.site-languages{display:flex;gap:2px}.site-languages a{color:#fff;text-decoration:none;padding:9px 8px;border-radius:7px;min-height:36px}.site-languages a[aria-current=page]{background:#f8d47b;color:#103b57;font-weight:bold}.site-languages a:hover{outline:1px solid #f8d47b}.site-controls button{font:14px Arial,sans-serif;min-height:40px;white-space:nowrap;padding:8px 12px;border:1px solid #a9cada;border-radius:9px;background:#163c54;color:white;cursor:pointer}.site-controls button:focus-visible,.site-controls a:focus-visible{outline:3px solid #f8d47b;outline-offset:3px}.translation-note{padding:14px 24px;background:#edf4f8;color:#36586c;font:14px/1.6 Arial,sans-serif;border-top:1px solid #bdd1de}.translation-note a{color:#075d91}.site-nav{gap:16px}.site-search{max-width:215px}.site-controls{order:1}.site-links{order:2;flex-basis:100%}.site-brand{order:0}.site-search{order:1;margin-left:auto}@media(min-width:1600px){.site-links{order:0;flex-basis:auto}.site-controls{order:1}}@media(max-width:600px){.site-nav{gap:10px}.site-controls{margin-left:auto}.site-search{max-width:none;flex:1 1 180px}.site-brand{flex:1 1 auto}.site-links{order:3}.site-controls{order:2}}@media print{.site-controls,.site-search{display:none!important}}
+html[data-theme=dark]{color-scheme:dark;background:#0b1722}
+html[data-theme=dark] body{background:#0b1722!important;color:#e2edf4!important}
+html[data-theme=dark] :is(main,.layout,.article-shell,.news-home,.search-main,.infografia){background:#0e1e2c!important;color:#e2edf4!important}
+html[data-theme=dark] main :is(section,article,figure,details,blockquote,aside,pre,table,th,td,.panel,.card,.news-card,.result-card,.takeaway,.note,.visual-panel,.concept-art,.flow-card,.step,.source-card,.sources li,.search-results li,.outro,.current-example,.prompt-box,.prompt-card,.model-card,.practice,.exercise,.mindmap,.map){background:#152d3e!important;border-color:#426175!important;color:#e2edf4!important;box-shadow:none!important}
+html[data-theme=dark] main :is(div,p,li,span,small,strong,em,label,summary,h1,h2,h3,h4,h5,figcaption,caption){color:inherit}
+html[data-theme=dark] :is(h1,h2,h3,h4,h5){color:#f0f7fb!important}
+html[data-theme=dark] main a,html[data-theme=dark] .translation-note a{color:#8dd4ff!important}
+html[data-theme=dark] main :is(.eyebrow,.label,.number,.num,.badge){color:#ffd27a!important;background-color:transparent!important}
+html[data-theme=dark] main :is(input,textarea,select){background:#0d1d29!important;color:#edf5fa!important;border-color:#607e92!important}
+html[data-theme=dark] main button{background:#284e67!important;color:#f3f8fc!important;border-color:#7498ae!important}
+html[data-theme=dark] main :is(.primary-link,.cta){background:#214b68!important;color:white!important}
+html[data-theme=dark] :is(#index,.menu,.side-nav){background:#12334a!important;color:#e2edf4!important;border-color:#456b84!important}
+html[data-theme=dark] :is(#index,.menu) :is(p,a,span,strong){color:#e2edf4!important}
+html[data-theme=dark] main svg:not([aria-hidden=true]){background:#eaf4fc;border-radius:12px;color:#173c56}
+html[data-theme=dark] main svg text{fill:#173c56}
+html[data-theme=dark] .brand img,html[data-theme=dark] main img[src$=".svg"]{background:#eaf4fc;border-radius:12px}
+html[data-theme=dark] dialog{background:#0e1e2c!important;color:#e2edf4!important}
+html[data-theme=dark] dialog :is(p,.lead,.meta,.article-source){color:#d4e2ec!important}
+html[data-theme=dark] dialog a{color:#8dd4ff!important}
+html[data-theme=dark] dialog .takeaway{background:#253d4e!important;color:#e2edf4!important}
+html[data-theme=dark] .translation-note{background:#122a3a;color:#d4e2ec;border-color:#426175}
+html[data-theme=dark] mark{background:#65501f!important;color:#fff3cd!important}
+html[data-theme=dark] .site-search input{background:#122a3a;color:#fff}
+html[data-theme=dark] .site-search input::placeholder{color:#bdd1df}
+html[data-theme=dark] .site-search button{background:#f8d47b;color:#103b57}
+@media(max-width:760px){#menu{position:relative!important;top:auto!important;right:auto!important;margin:12px 16px;z-index:6}html[data-theme=dark] #menu,html[data-theme=dark] #menu-toggle{background:#284e67;color:white}}
+html[data-theme=dark] main :is(.builder,.callout,.case,.chart,.chip,.classroom-gate,.classroom-hub,.classroom-learners,.data-highlight,.definition,.demo,.document-enrichment,.dua-goal,.evidence-row,.flow-note,.framework,.guide,.hero-visual,.home-group,.ia-etiqueta,.ia-idea,.ia-targeta,.law,.learning-visual,.literacy-root,.logo-tile,.mind-branch,.mind-center,.mind-icon,.mindmap-panel,.model-label,.nest,.notice,.own,.prototype-window,.record-sheet,.resource-source,.source-status,.territory-card,.territory-idea,.v-badge,.v-medallion,.v-takeaway,.visual-flow){background:#183247!important;color:#e2edf4!important;border-color:#426175!important}
+html[data-theme=dark] main :is(.classroom-prep,.dua-branches,.map-legend,.notebook-scene,.orbit-principles,.resource-gallery,.verify-flow)>div,html[data-theme=dark] main :is(.flow,.learning-lanes,.timeline,.source-list) li,html[data-theme=dark] main :is(.entry-grid,.google-tools,.route) a{background:#183247!important;color:#e2edf4!important;border-color:#426175!important}
+html[data-theme=dark] #iaducacio-prompts,html[data-theme=dark] #iaducacio-prompts .content div{background:#152d3e!important;color:#e2edf4!important;border-color:#426175!important}
+html[data-theme=dark] main :is(.cost-track,.track){background:#354f60!important}
+html[data-theme=dark] .world-map{background:#eaf4fc!important}
