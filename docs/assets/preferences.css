@@ -31,3 +31,6 @@ html[data-theme=dark] main :is(.classroom-prep,.dua-branches,.map-legend,.notebo
 html[data-theme=dark] #iaducacio-prompts,html[data-theme=dark] #iaducacio-prompts .content div{background:#152d3e!important;color:#e2edf4!important;border-color:#426175!important}
 html[data-theme=dark] main :is(.cost-track,.track){background:#354f60!important}
 html[data-theme=dark] .world-map{background:#eaf4fc!important}
+html[data-theme=dark] main :is(p,small,figcaption,caption,label,summary){color:inherit!important}
+html[data-theme=dark] main :is(.result-page,.meta,.proof,.source-note,.refs){color:#bfd4e3!important}
+html[data-theme=dark] main :is(.number,.num,.badge,.ia-numero){background:#294b62!important;color:#ffdb8a!important}
