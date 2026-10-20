@@ -34,3 +34,5 @@ html[data-theme=dark] .world-map{background:#eaf4fc!important}
 html[data-theme=dark] main :is(p,small,figcaption,caption,label,summary){color:inherit!important}
 html[data-theme=dark] main :is(.result-page,.meta,.proof,.source-note,.refs){color:#bfd4e3!important}
 html[data-theme=dark] main :is(.number,.num,.badge,.ia-numero){background:#294b62!important;color:#ffdb8a!important}
+
+html[data-theme=dark] .news-card time{color:#bfd4e3!important}
