@@ -36,3 +36,9 @@ html[data-theme=dark] main :is(.result-page,.meta,.proof,.source-note,.refs){col
 html[data-theme=dark] main :is(.number,.num,.badge,.ia-numero){background:#294b62!important;color:#ffdb8a!important}
 
 html[data-theme=dark] .news-card time{color:#bfd4e3!important}
+
+/* Licensing notice, shared by all language editions. */
+footer.site-license{box-sizing:border-box;width:100%;margin:0;padding:24px max(20px,calc((100% - 1120px)/2));border-top:3px solid #edb546;background:#edf4f8;color:#103b57;text-align:left;font:14px/1.65 Arial,sans-serif;overflow-wrap:anywhere}
+footer.site-license p{max-width:1120px;margin:0 0 10px}footer.site-license p:last-child{margin-bottom:0}
+footer.site-license a{color:#075d91;text-decoration:underline;text-underline-offset:3px}footer.site-license a:focus-visible{outline:3px solid #126398;outline-offset:4px}
+html[data-theme=dark] footer.site-license{background:#102b3e;color:#e2edf4}html[data-theme=dark] footer.site-license a{color:#9bd8ff}

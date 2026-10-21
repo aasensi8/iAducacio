@@ -1,5 +1,6 @@
 """Build static ES/EN editions from reviewed phrase dictionaries and Catalan source snapshots."""
 from pathlib import Path
+from llicencia import add_license_footer
 from html.parser import HTMLParser
 import json,re,html,posixpath,sys
 BASE=Path(__file__).parent; ROOT=BASE/'docs'; SOURCE=ROOT
@@ -70,7 +71,7 @@ def decorate(s,lang,rel):
   note={'es':'Versión traducida con asistencia automática. El catalán es la versión de referencia; los documentos originales y algunas infografías conservan su idioma.','en':'Machine-assisted translation. Catalan is the reference version; original documents and some infographics retain their original language.'}[lang]
   original=posixpath.relpath(rel,posixpath.dirname(route) or '.')
   s=s.replace('</body>',f'<footer class="translation-note">{note} <a href="{original}" lang="ca">Original en català</a></footer></body>')
- return s
+ return add_license_footer(s,lang)
 maps={lang:json.loads((BASE/'i18n'/f'{lang}.json').read_text()) for lang in ['es','en']}
 for p in list(SOURCE.rglob('*.html')):
  if p.relative_to(SOURCE).parts[0] in ('es','en'):continue

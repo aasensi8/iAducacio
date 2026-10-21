@@ -28,3 +28,13 @@ Després de modificar els continguts HTML, executa `python3 actualitzar-cercador
 
 ## Idiomes i tema
 El català continua a `docs/`; les versions castellana i anglesa són a `docs/es/` i `docs/en/`. Els diccionaris revisables són a `i18n/es.json` i `i18n/en.json`, amb decisions terminològiques a `i18n/revisio.json`. `generar-idiomes.py` conserva el català, regenera les dues versions i els controls. Després cal executar `actualitzar-cercador.py`. No tradueix frases noves automàticament: cal incorporar-les i revisar-les als diccionaris abans de publicar. Els documents originals es mantenen en la llengua de publicació. El mode de color es desa localment amb la clau `iaducacio-theme`.
+
+## Llicències
+
+Els continguts educatius originals d’iAducació es publiquen sota [CC BY-SA 4.0 — Reconeixement-CompartirIgual](https://creativecommons.org/licenses/by-sa/4.0/), llevat que s’hi indiqui una altra llicència. Cal reconèixer l’autoria, enllaçar la llicència, indicar els canvis i compartir les adaptacions amb la mateixa llicència.
+
+Aquesta declaració exclou els continguts, documents, marques i logotips de tercers: conserven els drets, crèdits i llicències dels seus titulars. No estén la llicència d’iAducació als recursos externs enllaçats o reproduïts.
+
+La CC BY-SA 4.0 no s’aplica al codi font. Aquest repositori no ha adoptat una llicència MIT ni cap altra llicència general per al codi font.
+
+El peu de llicència en català, castellà i anglès es defineix a `llicencia.py`; `generar-idiomes.py` l’afegeix sense duplicar-lo en regenerar les pàgines.
