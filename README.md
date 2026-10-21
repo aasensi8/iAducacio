@@ -38,3 +38,5 @@ Aquesta declaració exclou els continguts, documents, marques i logotips de terc
 La CC BY-SA 4.0 no s’aplica al codi font. Aquest repositori no ha adoptat una llicència MIT ni cap altra llicència general per al codi font.
 
 El peu de llicència en català, castellà i anglès es defineix a `llicencia.py`; `generar-idiomes.py` l’afegeix sense duplicar-lo en regenerar les pàgines.
+
+El distintiu `docs/assets/cc-by-sa.svg` és el fitxer oficial de Creative Commons, descarregat de https://mirrors.creativecommons.org/presskit/buttons/88x31/svg/by-sa.svg. S’utilitza sense alterar per identificar la llicència; les marques de Creative Commons continuen subjectes a la seva política de marques: https://creativecommons.org/policies/.

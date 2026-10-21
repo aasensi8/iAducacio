@@ -42,3 +42,6 @@ footer.site-license{box-sizing:border-box;width:100%;margin:0;padding:24px max(2
 footer.site-license p{max-width:1120px;margin:0 0 10px}footer.site-license p:last-child{margin-bottom:0}
 footer.site-license a{color:#075d91;text-decoration:underline;text-underline-offset:3px}footer.site-license a:focus-visible{outline:3px solid #126398;outline-offset:4px}
 html[data-theme=dark] footer.site-license{background:#102b3e;color:#e2edf4}html[data-theme=dark] footer.site-license a{color:#9bd8ff}
+
+footer.site-license .site-license-badge{display:inline-block;margin:0 0 14px;padding:4px;background:#fff;border-radius:4px;line-height:0}
+footer.site-license .site-license-badge img{display:block;width:88px;height:31px;max-width:100%;border:0}
