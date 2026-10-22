@@ -45,3 +45,38 @@ html[data-theme=dark] footer.site-license{background:#102b3e;color:#e2edf4}html[
 
 footer.site-license .site-license-badge{display:inline-block;margin:0 0 14px;padding:4px;background:#fff;border-radius:4px;line-height:0}
 footer.site-license .site-license-badge img{display:block;width:88px;height:31px;max-width:100%;border:0}
+
+/* Consistent navigation metrics, independent of each page's typography. */
+body > .site-nav{font:15px/1.4 Arial,sans-serif;box-sizing:border-box;gap:16px;padding:18px 26px}
+body > .site-nav *{box-sizing:border-box}
+body > .site-nav a{border:0;margin:0;line-height:1.4}
+body > .site-nav .site-brand{font:800 22px/1.4 Arial,sans-serif;padding:0;min-height:48px}
+body > .site-nav .site-brand img{display:block;width:48px;height:48px;margin:0}
+body > .site-nav .site-links{gap:6px;align-items:center}
+body > .site-nav .site-links a{font:15px/1.4 Arial,sans-serif;padding:8px 12px}
+body > .site-nav .site-search{height:46px;margin-top:0;margin-bottom:0}
+body > .site-nav .site-search input{height:44px;margin:0;font:16px/1.4 Arial,sans-serif;padding:11px 12px}
+body > .site-nav .site-search button{height:44px;width:44px;padding:0;margin:0;font:16px/1 Arial,sans-serif}
+body > .site-nav .site-controls button{font:14px/1.4 Arial,sans-serif;height:40px;margin:0}
+body > .site-nav .site-languages a{font:14px/1.4 Arial,sans-serif;padding:9px 8px}
+@media(max-width:600px){body > .site-nav{padding:14px;gap:10px}body > .site-nav .site-links a{font-size:13px;padding:8px}}
+
+/* One continuous reading surface with breathing room around the text. */
+html[data-theme=dark] .layout > main{background:#152d3e!important;border-color:#426175!important;padding-inline:clamp(24px,3vw,48px)}
+
+/* Each framework is one horizontal row; its components read left to right. */
+#iaducacio-prompts .framework-intro + .grid{display:grid;grid-template-columns:minmax(0,1fr)!important;gap:24px}
+#iaducacio-prompts .framework-intro + .grid > div{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 20px;padding:22px;min-width:0}
+#iaducacio-prompts .framework-intro + .grid > div > :is(h4,p,ul){grid-column:1/-1;margin:0}
+#iaducacio-prompts .framework-intro + .grid > div > ul{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;padding:0;list-style:none}
+#iaducacio-prompts .framework-intro + .grid > div:last-child > ul{grid-template-columns:repeat(3,minmax(0,1fr))}
+#iaducacio-prompts .framework-intro + .grid > div > ul > li{margin:0;padding:12px;border:1px solid #c7dcea;border-radius:10px;background:#edf6fc;font-size:15px;line-height:1.55}
+#iaducacio-prompts .framework-intro + .grid li > span{display:block;margin-bottom:6px}
+#iaducacio-prompts .framework-intro + .grid > div > div{margin:0;padding:14px;min-width:0}
+#iaducacio-prompts .framework-intro + .grid .current-example h3{font-size:18px;margin:8px 0}
+#iaducacio-prompts .framework-intro + .grid .current-example p{font-size:15px;line-height:1.55}
+html[data-theme=dark] #iaducacio-prompts :is(ul,li,li span){color:#e2edf4!important}
+html[data-theme=dark] #iaducacio-prompts .framework-intro + .grid li{background:#1e3b50;border-color:#426175}
+html[data-theme=dark] #iaducacio-prompts .framework-intro + .grid li > span{color:#ffdb8a!important}
+@container(max-width:650px){#iaducacio-prompts .framework-intro + .grid > div > ul{grid-template-columns:repeat(2,minmax(0,1fr))}#iaducacio-prompts .framework-intro + .grid > div:last-child > ul{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:600px){#iaducacio-prompts .framework-intro + .grid > div{grid-template-columns:1fr;padding:16px}#iaducacio-prompts .framework-intro + .grid > div > ul,#iaducacio-prompts .framework-intro + .grid > div:last-child > ul{grid-template-columns:1fr}html[data-theme=dark] .layout > main{padding-inline:20px}}
