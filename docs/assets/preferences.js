@@ -1,6 +1,10 @@
 (() => {
   const root = document.documentElement;
   const siteRoot = new URL('../', document.currentScript.src);
+  const glossaryScript = document.createElement('script');
+  glossaryScript.src = new URL('assets/glossary-tooltips.js', siteRoot).href;
+  glossaryScript.defer = true;
+  document.head.append(glossaryScript);
   let stored;
   try { stored = localStorage.getItem('iaducacio-theme'); } catch {}
   root.dataset.theme = stored === 'dark' || stored === 'light' ? stored : 'light';
