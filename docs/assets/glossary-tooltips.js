@@ -53,7 +53,7 @@
         tip.style.left=Math.max(12,Math.min(innerWidth-width-12,box.left))+'px';
         tip.style.top=(box.bottom+height+12<innerHeight ? box.bottom+8 : Math.max(12,box.top-height-8))+'px';
       }
-      function find(el){return el?.closest?.('.glossary-term') || el?.querySelector?.('.glossary-term');}
+      function find(el){return el?.closest?.('.glossary-term') || (el?.matches?.('a') ? el.querySelector('.glossary-term') : null);}
       document.addEventListener('pointerover',e=>{const el=find(e.target);if(el)show(el);});
       document.addEventListener('pointerout',e=>{if(active && !active.contains(e.relatedTarget) && document.activeElement!==active && !active.closest('a:focus')) {tip.hidden=true;active=null;}});
       document.addEventListener('focusin',e=>{const el=find(e.target);if(el)show(el);else if(active){tip.hidden=true;active=null;}});
