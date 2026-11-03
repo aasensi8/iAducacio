@@ -29,13 +29,13 @@
       function decorate(node) {
         if (node.nodeType === Node.TEXT_NODE) {
           const parent=node.parentElement;
-          if (!parent || !parent.closest('main, .news-article, #article-content') || parent.closest('script,style,code,pre,textarea,input,button,select,svg,[contenteditable],.glossary-term,#iad-glossary-tip')) return;
+          if (!parent || parent.closest('script,style,code,pre,textarea,input,button,select,svg,[contenteditable],.glossary-term,#iad-glossary-tip')) return;
           const text=node.nodeValue; pattern.lastIndex=0; let match, last=0, frag=document.createDocumentFragment(), found=false;
           while ((match=pattern.exec(text))) {
             found=true; frag.append(document.createTextNode(text.slice(last,match.index)));
             const span=document.createElement('span');span.className='glossary-term';span.textContent=match[0];
             span.dataset.definition=lookup.get(match[0].toLocaleLowerCase(language));
-            const link=parent.closest('a');
+            const link=parent.closest('a,summary,[role=button]');
             if(link) link.setAttribute('aria-describedby',tip.id); else {span.tabIndex=0;span.setAttribute('aria-describedby',tip.id);}
             frag.append(span);last=match.index+match[0].length;
           }
@@ -53,9 +53,9 @@
         tip.style.left=Math.max(12,Math.min(innerWidth-width-12,box.left))+'px';
         tip.style.top=(box.bottom+height+12<innerHeight ? box.bottom+8 : Math.max(12,box.top-height-8))+'px';
       }
-      function find(el){return el?.closest?.('.glossary-term') || (el?.matches?.('a') ? el.querySelector('.glossary-term') : null);}
+      function find(el){return el?.closest?.('.glossary-term') || (el?.matches?.('a,summary,[role=button]') ? el.querySelector('.glossary-term') : null);}
       document.addEventListener('pointerover',e=>{const el=find(e.target);if(el)show(el);});
-      document.addEventListener('pointerout',e=>{if(active && !active.contains(e.relatedTarget) && document.activeElement!==active && !active.closest('a:focus')) {tip.hidden=true;active=null;}});
+      document.addEventListener('pointerout',e=>{if(active && !active.contains(e.relatedTarget) && document.activeElement!==active && !active.closest('a:focus,summary:focus,[role=button]:focus')) {tip.hidden=true;active=null;}});
       document.addEventListener('focusin',e=>{const el=find(e.target);if(el)show(el);else if(active){tip.hidden=true;active=null;}});
       document.addEventListener('focusout',e=>{if(active && !active.contains(e.relatedTarget)){tip.hidden=true;active=null;}});
       document.addEventListener('pointerdown',e=>{const el=find(e.target);if(el && !el.closest('a')){el.focus();show(el);}});
