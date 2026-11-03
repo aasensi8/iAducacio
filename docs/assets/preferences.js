@@ -8,7 +8,7 @@
   const labels = {ca:['Activa el mode fosc','Activa el mode clar','Fosc','Clar'],es:['Activar el modo oscuro','Activar el modo claro','Oscuro','Claro'],en:['Switch to dark mode','Switch to light mode','Dark','Light']}[lang] || [];
   function ready(){
     const menu = document.querySelector('.site-nav .site-links');
-    if (menu && !menu.querySelector('[data-glossary-link]') && !Array.from(menu.querySelectorAll('a')).some(a => /\\/glossari\\.html$/.test(new URL(a.href).pathname))) {
+    if (menu && !menu.querySelector('[data-glossary-link]') && !Array.from(menu.querySelectorAll('a')).some(a => new URL(a.href).pathname.endsWith('/glossari.html'))) {
       const link=document.createElement('a'); const language=['es','en'].includes(lang)?lang:'ca';
       link.href=new URL((language==='ca'?'':language+'/')+'glossari.html',siteRoot).href;
       link.textContent={ca:'Glossari',es:'Glosario',en:'Glossary'}[language]; link.dataset.glossaryLink=''; menu.append(link);
