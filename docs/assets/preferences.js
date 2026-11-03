@@ -1,11 +1,18 @@
 (() => {
   const root = document.documentElement;
+  const siteRoot = new URL('../', document.currentScript.src);
   let stored;
   try { stored = localStorage.getItem('iaducacio-theme'); } catch {}
   root.dataset.theme = stored === 'dark' || stored === 'light' ? stored : 'light';
   const lang = root.lang || 'ca';
   const labels = {ca:['Activa el mode fosc','Activa el mode clar','Fosc','Clar'],es:['Activar el modo oscuro','Activar el modo claro','Oscuro','Claro'],en:['Switch to dark mode','Switch to light mode','Dark','Light']}[lang] || [];
   function ready(){
+    const menu = document.querySelector('.site-nav .site-links');
+    if (menu && !menu.querySelector('[data-glossary-link]') && !Array.from(menu.querySelectorAll('a')).some(a => /\\/glossari\\.html$/.test(new URL(a.href).pathname))) {
+      const link=document.createElement('a'); const language=['es','en'].includes(lang)?lang:'ca';
+      link.href=new URL((language==='ca'?'':language+'/')+'glossari.html',siteRoot).href;
+      link.textContent={ca:'Glossari',es:'Glosario',en:'Glossary'}[language]; link.dataset.glossaryLink=''; menu.append(link);
+    }
     const button = document.querySelector('[data-theme-toggle]');
     const refresh = () => {if (!button) return; const dark=root.dataset.theme==='dark';button.setAttribute('aria-pressed',String(dark));button.setAttribute('aria-label',labels[dark?1:0]);button.title=labels[dark?1:0];button.textContent=(dark?'☀ ':'☾ ')+labels[dark?3:2];};
     refresh();
