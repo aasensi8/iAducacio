@@ -5,9 +5,9 @@
   if (location.pathname.endsWith('/glossari.html')) return;
   const glossary = new URL((language === 'ca' ? '' : language + '/') + 'glossari.html', root);
   const extra = {
-    ca: {'hallucination':['al·lucinacions'],'llm':['LLMs'],'prompt':['prompts'],'neural-network':['xarxes neuronals']},
-    es: {'hallucination':['alucinaciones'],'llm':['LLMs'],'prompt':['prompts'],'neural-network':['redes neuronales']},
-    en: {'hallucination':['hallucinations'],'llm':['LLMs'],'prompt':['prompts'],'neural-network':['neural networks'],'deep-learning':['deep learning']}
+    ca: {'human-in-the-loop':['human-in-the-loop'], 'hallucination':['al·lucinacions'],'llm':['LLMs'],'prompt':['prompts'],'neural-network':['xarxes neuronals']},
+    es: {'human-in-the-loop':['human-in-the-loop'], 'hallucination':['alucinaciones'],'llm':['LLMs'],'prompt':['prompts'],'neural-network':['redes neuronales']},
+    en: {'human-in-the-loop':['human-in-the-loop'], 'hallucination':['hallucinations'],'llm':['LLMs'],'prompt':['prompts'],'neural-network':['neural networks'],'deep-learning':['deep learning']}
   };
   function start() {
     fetch(glossary).then(r => { if (!r.ok) throw Error('Glossary unavailable'); return r.text(); }).then(source => {
