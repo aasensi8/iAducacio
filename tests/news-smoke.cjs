@@ -10,14 +10,14 @@ require('node:fs').mkdirSync('review',{recursive:true});
   await page.setViewportSize({width,height:960});
   await page.goto(base+'noticies.html');
   await page.waitForSelector('#news-filters button');
-  assert.equal(await page.locator('.news-card').count(),5);
+  assert.equal(await page.locator('.news-card').count(),6);
   assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),`page overflow ${width}`);
   const dates=await page.locator('.news-card time').evaluateAll(es=>es.map(e=>e.dateTime));
   assert.deepEqual(dates,[...dates].sort().reverse());
   await page.getByRole('button',{name:'Recursos',exact:true}).click();
   assert.equal(await page.locator('.news-card:visible').count(),1);
   await page.getByRole('button',{name:'Totes',exact:true}).click();
-  for(let i=0;i<5;i++){
+  for(let i=0;i<6;i++){
    await page.locator('.news-card').nth(i).click();
    await page.waitForSelector('#news-dialog[open]');
    await page.locator('#article-content img').evaluateAll(async images=>Promise.all(images.map(i=>i.decode().catch(()=>{}))));
@@ -54,7 +54,7 @@ require('node:fs').mkdirSync('review',{recursive:true});
  const nojs=await browser.newPage({javaScriptEnabled:false,viewport:{width:390,height:844}});
  await nojs.goto(base+'noticies.html');
  await nojs.locator('.news-card').first().click();
- await nojs.waitForURL('**/noticia-entrevista-miquel-angel-prats.html');
- console.log('PASS: responsive 1440/768/390/320, all 5 readers, filters, dates, focus return, Escape, ES/EN, dark mode, fetch fallback and no-JS navigation. No JS errors.');
+ await nojs.waitForURL('**/noticia-google-search-ia-centres-educatius.html');
+ console.log('PASS: responsive 1440/768/390/320, all 6 readers, filters, dates, focus return, Escape, ES/EN, dark mode, fetch fallback and no-JS navigation. No JS errors.');
  await browser.close();
 })().catch(e=>{console.error(e);process.exit(1)});
