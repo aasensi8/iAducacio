@@ -75,3 +75,21 @@ html[data-theme=dark] .news-article figcaption{color:#bfd4e3}
 /* Reusable audio controls, including articles loaded in the dialog. */
 .news-speech{margin:24px 0;padding:18px;border:1px solid #b8ccd8;border-radius:10px;background:#edf5fa;color:#103b57;font:15px/1.5 Arial,sans-serif}
 .speech-controls{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:12px}.speech-controls button,.speech-controls select{min-height:44px;padding:9px 14px;font:600 14px Arial,sans-serif;border:1px solid #7193a7;border-radius:6px;background:white;color:#103b57;cursor:pointer}.speech-controls button:first-child{background:#103b57;color:white}.speech-controls button:disabled{opacity:.5;cursor:default}.speech-controls label{display:flex;gap:8px;align-items:center}.speech-status,.speech-note{font-size:13px;margin:10px 0 0}.speech-note:empty{display:none}.news-speech select:focus-visible{outline:3px solid #b56b00;outline-offset:3px}html[data-theme=dark] .news-speech{background:#1b3547;color:#e2edf4;border-color:#61869c}.news-card:not(.news-featured) .news-cover{width:100%;max-height:240px;object-fit:contain;margin-bottom:16px}.article-hero img{border-radius:8px}
+
+/* Compact news overview: preserve complete titles and summaries. */
+.news-home{padding-top:36px;padding-bottom:64px}
+.news-intro{margin-bottom:20px}
+.news-intro h1{margin:8px 0 10px;font-size:clamp(30px,4vw,44px)}
+.news-intro .lead{margin:0;font-size:clamp(17px,1.5vw,19px);line-height:1.45}
+.news-tools{padding-top:16px}
+.news-status{margin:12px 0}
+.news-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;align-items:stretch}
+.news-card,.news-featured{display:flex;grid-column:auto;flex-direction:column;align-items:flex-start;padding:20px}
+.news-card h2,.news-featured h2{font-size:20px;line-height:1.28;margin:10px 0 0;max-width:none}
+.news-card p,.news-featured p{font-size:15px;line-height:1.5;margin:10px 0 16px;max-width:none}
+.news-card time{margin-top:8px}
+.news-card .news-cover,.news-card:not(.news-featured) .news-cover{width:100%;height:120px;max-height:none;object-fit:contain;align-self:center;margin:0 0 12px}
+.featured-label{margin-bottom:8px}
+.read-more{padding-top:12px}
+@media(max-width:900px){.news-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.news-featured:has(.news-cover){display:flex;padding:20px}}
+@media(max-width:600px){.news-home{padding-top:24px}.news-grid{grid-template-columns:1fr;gap:12px}.news-card,.news-featured:has(.news-cover){padding:18px}.news-card .news-cover,.news-card:not(.news-featured) .news-cover{height:110px;margin-bottom:10px}.news-featured h2{font-size:20px}}
