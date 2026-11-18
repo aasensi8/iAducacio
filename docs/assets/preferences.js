@@ -11,6 +11,22 @@
   const lang = root.lang || 'ca';
   const labels = {ca:['Activa el mode fosc','Activa el mode clar','Fosc','Clar'],es:['Activar el modo oscuro','Activar el modo claro','Oscuro','Claro'],en:['Switch to dark mode','Switch to light mode','Dark','Light']}[lang] || [];
   function ready(){
+    const brand = document.querySelector('.site-nav .site-brand');
+    if (brand && !brand.querySelector('.brand-copy')) {
+      const nameNode = Array.from(brand.childNodes).find(node => node.nodeType === Node.TEXT_NODE && node.textContent.trim());
+      if (nameNode) {
+        const copy = document.createElement('span');
+        copy.className = 'brand-copy';
+        const name = document.createElement('span');
+        name.className = 'brand-name';
+        name.textContent = nameNode.textContent.trim();
+        const subtitle = document.createElement('span');
+        subtitle.className = 'brand-subtitle';
+        subtitle.textContent = {ca:'Intel·ligència artificial i educació',es:'Inteligencia artificial y educación',en:'Artificial intelligence and education'}[lang.split('-')[0]] || 'Intel·ligència artificial i educació';
+        copy.append(name, subtitle);
+        nameNode.replaceWith(copy);
+      }
+    }
     const menu = document.querySelector('.site-nav .site-links');
     if (menu && !menu.querySelector('[data-glossary-link]') && !Array.from(menu.querySelectorAll('a')).some(a => new URL(a.href).pathname.endsWith('/glossari.html'))) {
       const link=document.createElement('a'); const language=['es','en'].includes(lang)?lang:'ca';
