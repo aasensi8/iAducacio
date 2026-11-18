@@ -1,3 +1,16 @@
 .section-heading .subpage-title{font-size:32px;line-height:1.25;letter-spacing:-.03em;margin:0;font-weight:720}
 .menu-number{display:inline-block;min-width:2.2em;font-size:.85em;opacity:.8}.page-number{display:block;font-size:27px;font-weight:700;color:var(--blue);margin-top:12px}
 @media(max-width:760px){.section-heading .subpage-title{font-size:25px}}
+
+/* Colors suaus per distingir els passos de cada itinerari. */
+.flow > li:nth-child(5n+1){background:#e5f2fc;border-color:#a9cfe6}
+.flow > li:nth-child(5n+2){background:#fff2d8;border-color:#e4c17e}
+.flow > li:nth-child(5n+3){background:#e6f5eb;border-color:#9ccdab}
+.flow > li:nth-child(5n+4){background:#f1ebfa;border-color:#c6b5df}
+.flow > li:nth-child(5n+5){background:#fff0e6;border-color:#e6b99d}
+html[data-theme=dark] .flow > li:nth-child(5n+1){background:#193c53;border-color:#5289a8}
+html[data-theme=dark] .flow > li:nth-child(5n+2){background:#514320;border-color:#ad914c}
+html[data-theme=dark] .flow > li:nth-child(5n+3){background:#214b3a;border-color:#60a17d}
+html[data-theme=dark] .flow > li:nth-child(5n+4){background:#3d3458;border-color:#9080b4}
+html[data-theme=dark] .flow > li:nth-child(5n+5){background:#533a30;border-color:#b7846a}
+html[data-theme=dark] .flow > li::before{color:#a9ddf8}
