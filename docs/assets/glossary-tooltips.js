@@ -5,7 +5,7 @@
   if (location.pathname.endsWith('/glossari.html')) return;
   const glossary = new URL((language === 'ca' ? '' : language + '/') + 'glossari.html', root);
   const extra = {
-    ca: {'human-in-the-loop':['human-in-the-loop'], 'hallucination':['al·lucinacions'],'llm':['LLMs'],'prompt':['prompts'],'neural-network':['xarxes neuronals']},
+    ca: {'aig':['AIG','AGI','IAG','intel·ligència artificial general'], 'human-in-the-loop':['human-in-the-loop'], 'hallucination':['al·lucinacions'],'llm':['LLMs'],'prompt':['prompts'],'neural-network':['xarxes neuronals']},
     es: {'human-in-the-loop':['human-in-the-loop'], 'hallucination':['alucinaciones'],'llm':['LLMs'],'prompt':['prompts'],'neural-network':['redes neuronales']},
     en: {'human-in-the-loop':['human-in-the-loop'], 'hallucination':['hallucinations'],'llm':['LLMs'],'prompt':['prompts'],'neural-network':['neural networks'],'deep-learning':['deep learning']}
   };
